@@ -95,8 +95,8 @@ public class AuthorController extends HttpServlet {
                         }
 
                         this.refreshList(request, authService);
-                        //destination = RESULTS_PAGE;
-                         destination =  "/authorTablePage.jsp";
+                        destination = RESULTS_PAGE;
+                       
                     }
                     break;
                     
@@ -113,10 +113,6 @@ public class AuthorController extends HttpServlet {
                     destination = RESULTS_PAGE;
                     break;
 
-                default:
-                    request.setAttribute("errMsg", NO_PARAM_ERR_MSG);
-                    destination = RESULTS_PAGE;
-                    break;
             }
        
             
