@@ -24,12 +24,7 @@
             <a href="AuthorController?action=list">Manage Authors</a>
         </h3>
     </header>
-   <%-- <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="MainStyleSheet.css" rel="stylesheet" type="text/css"/>
-        <title>Author Table</title>
-    </head>--%>
+   
     <body>
         <form method="POST" action="AuthorController?action=addEditDelete">
             <div>

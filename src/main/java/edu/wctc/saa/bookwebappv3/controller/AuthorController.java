@@ -23,7 +23,6 @@ public class AuthorController extends HttpServlet {
     
     // No Magic Numbers
     private static final String NO_PARAM_ERR_MSG = "No request parameter identified";
-    //private static final String RESULTS_PAGE = "/ManageAuthors.jsp";
     private static final String RESULTS_PAGE = "/authorTablePage.jsp";
     private static final String Edit_PAGE = "/ManageAuthor.jsp";
     private static final String LIST_ACTION = "list";
@@ -123,7 +122,7 @@ public class AuthorController extends HttpServlet {
             
         } catch (Exception e) {
           
-            //request.setAttribute("errMsg", e.getCause().getMessage());
+           
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destination);
             dispatcher.forward(request, response); 

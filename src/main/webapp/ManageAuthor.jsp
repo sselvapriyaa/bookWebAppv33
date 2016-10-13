@@ -26,29 +26,25 @@
     <body>
         <form method="POST" action="AuthorController">
           <table width="500" border="1" cellspacing="0" cellpadding="4" align="center">
-                <%--  <c:choose>
-                    <c:when test="${not empty author}">--%>
+                
                       
                         <tr>
                             <td style="background-color: black;color:white;" align="left">ID</td>
                             <td align="left"><input type="text" value="${author.authorId}" name="authorId" readonly/></td>
                         </tr>         
-              <%--   </c:when>
-                </c:choose> --%>
+             
                 
                 <tr>
                     <td style="background-color: blue;color:white;" align="left">Name</td>
                     <td align="left"><input type="text" value="${author.authorName}" name="authorName" /></td>
                 </tr>
                 
-              <%--  <c:choose>
-                    <c:when test="${not empty author}">--%>
+             
                         <tr>
                             <td style="background-color: black;color:white;" align="left">Date Added</td>
                             <td align="left"><input type="text" value="${author.dateAdded}" name="dateAdded" readonly /></td>
                         </tr>         
-               <%-- </c:when>
-                </c:choose> --%>
+              
                 
                 <tr>
                 <div>
