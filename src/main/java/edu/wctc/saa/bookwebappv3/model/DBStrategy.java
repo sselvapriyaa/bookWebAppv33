@@ -4,6 +4,7 @@ package edu.wctc.saa.bookwebappv3.model;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import javax.sql.DataSource;
 /**
  *
  * @author Gladwin
@@ -13,7 +14,8 @@ import java.util.Map;
     
     void openConnection(String driverClass, String url, String userName, String password) 
             throws ClassNotFoundException, SQLException;
-    
+    void openConnection(DataSource ds)throws ClassNotFoundException, SQLException;
+   
     public void closeConnection() 
             throws ClassNotFoundException, SQLException;
     

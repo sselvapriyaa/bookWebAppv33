@@ -15,6 +15,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.enterprise.context.Dependent;
+import java.sql.SQLException;
+import javax.sql.DataSource;
+
+
 
 /**
  *
@@ -39,6 +43,12 @@ public class MySqlDBStrategy implements DBStrategy, Serializable {
      * @throws ClassNotFoundException
      * @throws SQLException
      */
+    @Override
+    public void openConnection(DataSource ds)throws ClassNotFoundException,SQLException{
+      conn=ds.getConnection();  
+    }
+
+    
     @Override
     public void openConnection(String driverClass, String url, String userName, String password)
             throws ClassNotFoundException, SQLException {

@@ -3,6 +3,7 @@ package edu.wctc.saa.bookwebappv3.model;
 
 import java.sql.SQLException;
 import java.util.List;
+import javax.sql.DataSource;
 /**
  *
  * @author Gladwin
@@ -10,7 +11,7 @@ import java.util.List;
 public interface AuthorDaoStrategy {
     
     void initDao(String driver, String url, String user, String password);
-    
+     void initDao(DataSource ds)throws ClassNotFoundException, SQLException ;
     List<Author> getAuthorList() 
             throws ClassNotFoundException, SQLException;
     

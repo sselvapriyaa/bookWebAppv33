@@ -21,21 +21,26 @@
         <h1>Author Table</h1>
         <h3>
             <a href="http://localhost:8080/bookWebAppv3.3/index.html">Home</a>
+           
+            <%-- <p>Contact for comments <a href="mailto:${webmasterEmail}">webmaster</a></p>--%>
             <a href="AuthorController?action=list">Manage Authors</a>
         </h3>
     </header>
    
     <body>
+        <jsp:include page="header.jsp"/>
         <form method="POST" action="AuthorController?action=addEditDelete">
             <div>
             <table align="center">
                 <th></th>
-                <th align="left" class="tableHead">ID</th>
-                <th align="left" class="tableHead">Author Name</th>
-                <th align="right" class="tableHead">Date Added</th>
-               
-                <c:forEach var="i" items="${authors}">
+                <th color="white" align="left" class="tableHead">ID</th>
+                <th color="white" align="left" class="tableHead">Author Name</th>
+                <th color="white" align="right" class="tableHead">Date Added</th>
+                                
+                <c:forEach var="i" items="${authors}"varStatus="rowCount">
+                    
                     <tr>
+                        
                         <td><input type="checkbox" name="authorId" value="${i.authorId}" /></td>
                         <td align="left">${i.authorId}</td>
                         <td align="left">${i.authorName}</td>
@@ -50,6 +55,8 @@
             <input type="submit" name="submit" value="Delete" align="center"/>
         </div>
     </form>
+       <%-- <a href="http://localhost:8080/bookWebAppv3.3/index.html">Home</a>--%>
+         <p>Contact for comments <a href="mailto:${webmasterEmail}">webmaster</a></p>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
     </body>
 </html>

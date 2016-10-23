@@ -19,12 +19,15 @@
     <header>
         <h1>Manage Author</h1>
         <h3>
-            <a href="http://localhost:8080/bookWebAppv3.3/index.html">Home</a>
+         <%--   <a href="http://localhost:8080/bookWebAppv3.3/index.html">Home</a>
+             <p>Contact for comments <a href="mailto:${webmasterEmail}">webmaster</a></p>--%>
             <a href="AuthorController?action=list">Manage Authors</a>
         </h3>
     </header>
     <body>
+         <jsp:include page="header.jsp"/>
         <form method="POST" action="AuthorController">
+           
           <table width="500" border="1" cellspacing="0" cellpadding="4" align="center">
                 
                       
