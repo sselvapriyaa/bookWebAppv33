@@ -2,8 +2,8 @@
 package edu.wctc.saa.bookwebappv3.controller;
 
 
-import edu.wctc.saa.bookwebappv3.model.Author;
-import edu.wctc.saa.bookwebappv3.model.AuthorService;
+import edu.wctc.saa.bookwebappv3.ejb.Author;
+import edu.wctc.saa.bookwebappv3.ejb.AuthorService;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -49,8 +49,9 @@ public class AuthorController extends HttpServlet {
     private String password;
     private String webmasterEmail;
     private String dbJndiName;
-    
-    
+    //@Inject
+    //private AuthorFacade authService;
+//    
     @Inject
     private AuthorService authService;
      
@@ -207,12 +208,12 @@ public class AuthorController extends HttpServlet {
 @Override
     public void init() throws ServletException {
         //Get init params from web.xml
-        driverClass = getServletContext().getInitParameter("db.driver.class");
-        url = getServletContext().getInitParameter("db.url");
-        userName = getServletContext().getInitParameter("db.username");
-        password = getServletContext().getInitParameter("db.password");
-        webmasterEmail = getServletContext().getInitParameter("webmaster-email");
-       dbJndiName = getServletContext().getInitParameter("db.jndi.name");
+//        driverClass = getServletContext().getInitParameter("db.driver.class");
+//        url = getServletContext().getInitParameter("db.url");
+//        userName = getServletContext().getInitParameter("db.username");
+//        password = getServletContext().getInitParameter("db.password");
+//        webmasterEmail = getServletContext().getInitParameter("webmaster-email");
+//       dbJndiName = getServletContext().getInitParameter("db.jndi.name");
       }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -1,5 +1,5 @@
 
-package edu.wctc.saa.bookwebappv3.model;
+package edu.wctc.saa.bookwebappv3.ejb;
 
 import java.sql.SQLException;
 import java.util.List;
