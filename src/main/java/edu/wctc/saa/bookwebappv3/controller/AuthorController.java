@@ -18,7 +18,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 
@@ -111,9 +112,9 @@ public class AuthorController extends HttpServlet {
        
         String action = request.getParameter(ACTION_PARAM);
         
-        
+          
         try{
-                 configDbConnection();      
+                configDbConnection();     
                 switch (action) {
                 case LIST_ACTION:
                    //session.setAttribute("created", (int)session.getAttribute("created") + 1);

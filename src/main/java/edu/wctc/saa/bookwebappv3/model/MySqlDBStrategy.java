@@ -304,13 +304,13 @@ public class MySqlDBStrategy implements DBStrategy, Serializable {
      * @throws ClassNotFoundException
      * @throws SQLException
      */
-////
-//        public static void main(String[] args)throws Exception {
-//        DBStrategy db = new MySqlDBStrategy();
-//        db.openConnection("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/book","root", "admin");
-//        List<Map<String, Object>> records = db.findAllRecords("author",500);
-//            System.out.println(records);
-//            db.closeConnection();
-//        
-//    }
+//
+        public static void main(String[] args)throws Exception {
+        DBStrategy db = new MySqlDBStrategy();
+        db.openConnection("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/book","root", "admin");
+        List<Map<String, Object>> records = db.findAllRecords("author",500);
+            System.out.println(records);
+            db.closeConnection();
+        
+    }
 }

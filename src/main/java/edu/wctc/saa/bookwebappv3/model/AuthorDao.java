@@ -256,7 +256,7 @@ public class AuthorDao implements AuthorDaoStrategy, Serializable {
      * @param args
      * @throws ClassNotFoundException
      * @throws SQLException 
-     */
+//     */
 //    public static void main(String[] args) 
 //            throws ClassNotFoundException, SQLException {
 //        
