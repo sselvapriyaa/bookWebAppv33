@@ -22,7 +22,7 @@
         <h3>
             <a href="http://localhost:8080/bookWebAppv3.3/index.html">Home</a>
            
-            <%-- <p>Contact for comments <a href="mailto:${webmasterEmail}">webmaster</a></p>--%>
+         
             <a href="AuthorController?action=list">Manage Authors</a>
         </h3>
     </header>
@@ -55,6 +55,7 @@
             <input type="submit" name="submit" value="Delete" align="center"/>
         </div>
     </form>
+           
        <%-- <a href="http://localhost:8080/bookWebAppv3.3/index.html">Home</a>--%>
          <p>Contact for comments <a href="mailto:${webmasterEmail}">webmaster</a></p>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
