@@ -7,9 +7,11 @@ package edu.wctc.saa.bookwebappv3.ejb;
 
 
 import edu.wctc.saa.bookwebappv3.model.Author;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -18,7 +20,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class AuthorFacade extends AbstractFacade<Author> {
 
-    @PersistenceContext(unitName = "ReverseEngineeringPU")
+    @PersistenceContext(unitName = "book_PU")
     private EntityManager em;
 
     @Override
@@ -30,4 +32,14 @@ public class AuthorFacade extends AbstractFacade<Author> {
         super(Author.class);
     }
     
+    public List<Author> findByName(String name){
+        List<Author> authorList = null;
+//        String jpql = "select a from Author where a.authorName =?1";
+//        TypedQuery<Author> query = getEntityManager().createQuery(jpql,Author.class);
+        TypedQuery<Author> query = getEntityManager().createNamedQuery("findByName", Author.class);
+        query.setParameter(1,name);
+        authorList = query.getResultList();
+        
+        return authorList;
+    }
 }

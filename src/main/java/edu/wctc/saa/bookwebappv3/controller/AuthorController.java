@@ -68,10 +68,10 @@ public class AuthorController extends HttpServlet {
         String destination = RESULTS_PAGE;
        
         String action = request.getParameter(ACTION_PARAM);
-        
+        Author author = null;
           
         try{
-                configDbConnection();     
+            //    configDbConnection();     
                 switch (action) {
                 case LIST_ACTION:
                    //session.setAttribute("created", (int)session.getAttribute("created") + 1);
@@ -91,7 +91,8 @@ public class AuthorController extends HttpServlet {
 
                         } else {
                             String authorId = authorIds[0];
-                            Author author = authService.find(new Integer(authorId));
+                            //Author author = authService.find(new Integer(authorId));
+                            author = authService.find(new Integer(authorId));
                             request.setAttribute("author", author);
                         }
 
@@ -100,7 +101,8 @@ public class AuthorController extends HttpServlet {
                     } else {
                         String[] authorIds = request.getParameterValues("authorId");
                         for (String id : authorIds) {
-                            Author author = authService.find(new Integer(id));
+//                            Author author = authService.find(new Integer(id));
+                               author = authService.find(new Integer(id));
                             authService.remove(author);
                         }
 
@@ -113,7 +115,8 @@ public class AuthorController extends HttpServlet {
                 case SAVE_ACTION:
                     String authorName = request.getParameter("authorName");
                     String authorId = request.getParameter("authorId");
-                    authService.saveOrUpdateAuthor(authorId, authorName);
+                    
+                    authService.findByAuthorId(authorId);
                     this.refreshList(request, authService);
                     destination = RESULTS_PAGE;
                     break;
@@ -138,13 +141,13 @@ public class AuthorController extends HttpServlet {
 
     }
 
-    private void refreshList(HttpServletRequest request, AuthorService authService) throws Exception {
-        List<Author> authors = authService.getAllAuthors();
+    private void refreshList(HttpServletRequest request, AuthorFacade  authService) throws Exception {
+        List<Author> authors = authService.findAll();
         request.setAttribute("authors", authors);
     }
-     private void configDbConnection() throws NamingException, ClassNotFoundException, SQLException { 
-          authService.getDao().initDao(driverClass, url, userName, password);
-     }
+//     private void configDbConnection() throws NamingException, ClassNotFoundException, SQLException { 
+//          authService.getDao().initDao(driverClass, url, userName, password);
+//     }
 //    private void configDbConnection() throws NamingException, ClassNotFoundException, SQLException { 
 //        if(dbJndiName==null){
 //        authService.getDao().initDao(driverClass, url, userName, password);

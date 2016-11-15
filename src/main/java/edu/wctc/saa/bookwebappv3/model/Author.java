@@ -8,6 +8,7 @@ package edu.wctc.saa.bookwebappv3.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
+import static javafx.scene.text.FontPosture.findByName;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -34,6 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Author.findAll", query = "SELECT a FROM Author a"),
+    @NamedQuery(name = "findByName",query = "select a from Author where a.authorName =?1"),
     @NamedQuery(name = "Author.findByAuthorId", query = "SELECT a FROM Author a WHERE a.authorId = :authorId"),
     @NamedQuery(name = "Author.findByAuthorName", query = "SELECT a FROM Author a WHERE a.authorName = :authorName"),
     @NamedQuery(name = "Author.findByDateAdded", query = "SELECT a FROM Author a WHERE a.dateAdded = :dateAdded")})
