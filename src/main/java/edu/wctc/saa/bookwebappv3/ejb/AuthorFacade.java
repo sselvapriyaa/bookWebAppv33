@@ -7,6 +7,7 @@ package edu.wctc.saa.bookwebappv3.ejb;
 
 
 import edu.wctc.saa.bookwebappv3.model.Author;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -41,5 +42,23 @@ public class AuthorFacade extends AbstractFacade<Author> {
         authorList = query.getResultList();
         
         return authorList;
+    }
+    public void deleteById(String id) {
+        Author author = this.find(new Integer(id));
+        this.remove(author);
+    }
+    
+    public void saveOrUpdate(String id, String name) {
+        Author author = new Author();
+        if(id == null) {
+            // must be a new record
+            author.setAuthorName(name);
+            author.setDateAdded(new Date());
+        } else {
+            // modify record
+            author.setAuthorId(new Integer(id));
+            author.setAuthorName(name);
+        }
+        this.getEntityManager().merge(author);
     }
 }
